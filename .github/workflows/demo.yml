@@ -16,27 +16,14 @@ jobs:
         run: |
           npm ci
           npm run build
-      - name: minimum
-        uses: ./
-        if: always()
-        with:
-          webhook: ${{ secrets.DISCORD_DEMO }}
       - name: full options
         uses: ./
         if: always()
         with:
-          webhook: ${{ secrets.DISCORD_DEMO }}
-          title: "deploy"
-          description: "Build and deploy to GitHub Pages"
-          image: ${{ secrets.EMBED_IMAGE }}
-          color: 0x0000ff
-          username: GitHub Actions
-          avatar_url: ${{ secrets.AVATAR_URL }}
-      - name: no detail
-        uses: ./
-        if: always()
-        env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_DEMO }}
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          content: "testing"
+          username: Build
+          avatar_url: "https://github.com/dothq.png"
         with:
           nodetail: true
           title: "We did it!"
