@@ -115,6 +115,9 @@ export function getPayload(inputs: Readonly<Inputs>): Object {
     if (inputs.avatar_url) {
         discord_payload.avatar_url = inputs.avatar_url
     }
+    if(inputs.content) {
+        discord_payload.content = inputs.content   
+    }
 
     return discord_payload
 }
