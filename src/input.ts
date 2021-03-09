@@ -5,6 +5,7 @@ export interface Inputs {
     webhooks: string[]
     status:string
     description: string
+    content: string
     title: string
     image: string
     color: number
@@ -56,6 +57,7 @@ export function getInputs(): Inputs {
         webhooks: webhooks,
         status: core.getInput('status').trim().toLowerCase(),
         description: core.getInput('description').trim(),
+        content: core.getInput('content').trim(),
         title: (core.getInput('title') || core.getInput('job')).trim(),
         image: core.getInput('image').trim(),
         color: parseInt(core.getInput('color')),
