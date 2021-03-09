@@ -24,3 +24,10 @@ jobs:
           content: "testing"
           username: Build
           avatar_url: "https://github.com/dothq.png"
+      - name: no content
+        uses: ./
+        if: always()
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          username: Build
+          avatar_url: "https://github.com/dothq.png"
