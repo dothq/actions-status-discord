@@ -1,4 +1,4 @@
-name: 'Actions Status Discord'
+name: 'Post Actions Status to Discord'
 description: 'Post Github Actions CI status to Discord'
 author: 'Sarisia'
 
@@ -17,6 +17,9 @@ inputs:
     description: "String included in embed title. Overrides job input."
     required: false
     default: ${{ github.workflow }}
+  content:
+    description: "String for the message above the embed."
+    required: false
   description:
     description: "Description included in message"
     required: false
