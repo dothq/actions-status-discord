@@ -31,6 +31,7 @@ describe('getPayload(Inputs)', () => {
         webhooks: ['https://webhook.invalid'],
         status: 'success',
         description: '',
+        content: '',
         title: '',
         image: '',
         color: NaN,
