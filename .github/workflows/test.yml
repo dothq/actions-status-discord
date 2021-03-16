@@ -1,10 +1,7 @@
-name: "test"
+name: Release
 on:
   workflow_dispatch:
   push:
-    branches-ignore:
-      - 'releases/**'
-  pull_request:
 
 jobs:
   test:
@@ -17,9 +14,11 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run release
-      - uses: sarisia/actions-status-discord@v1
-        if: always()
-        with:
-          webhook: ${{ secrets.DISCORD_WEBHOOK }}
-          status: ${{ job.status }}
-          title: ${{ github.workflow }}
+      - name: Release
+        run: |
+          git config --global user.name "dothq-robot"
+          git config --global user.email "72629236+dothq-robot@users.noreply.github.com"
+          git status
+          git add lib
+          git commit -m "✨ Add built code"
+          git push origin master
