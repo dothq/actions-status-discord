@@ -22,3 +22,13 @@ jobs:
           git add lib
           git commit -m "✨ Add built code"
           git push origin master
+
+  actions-tagger:
+    runs-on: windows-latest
+    needs: [test]
+    steps:
+      - uses: Actions-R-Us/actions-tagger@latest
+        env:
+          GITHUB_TOKEN: "${{ secrets.ROBOT_TOKEN }}"
+        with:
+          publish_latest_tag: true
