@@ -57,5 +57,5 @@ runs:
   main: 'lib/main.js'
 
 branding:
-  color: 'blue'
+  color: 'white'
   icon: 'send'
