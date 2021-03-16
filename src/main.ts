@@ -104,22 +104,14 @@ export function getPayload(inputs: Readonly<Inputs>): Object {
         ]
     }
 
-    let discord_payload: any = {
-        embeds: [fitEmbed(embed)]
-    }
+    let dscPayload: any = { embeds: [fitEmbed(embed)] }
     logDebug(`embed: ${JSON.stringify(embed)}`)
 
-    if (inputs.username) {
-        discord_payload.username = inputs.username
-    }
-    if (inputs.avatar_url) {
-        discord_payload.avatar_url = inputs.avatar_url
-    }
-    if(inputs.content) {
-        discord_payload.content = inputs.content   
-    }
+    if (inputs.username) dscPayload.username = inputs.username
+    if (inputs.avatar_url) dscPayload.avatar_url = inputs.avatar_url
+    if(inputs.content) dscPayload.content = inputs.content   
 
-    return discord_payload
+    return dscPayload
 }
 
 run()
