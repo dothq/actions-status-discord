@@ -20,6 +20,6 @@ jobs:
           git config --global user.name "dothq-robot"
           git config --global user.email "72629236+dothq-robot@users.noreply.github.com"
           git status
-          git add lib
+          git add lib node_modules
           git commit -m "✨ Add built code"
           git push origin master
